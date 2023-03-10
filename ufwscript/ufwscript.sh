@@ -24,10 +24,10 @@ if [ ! -f ~/lastip.txt ]; then
    sudo ufw allow from "$IP" to any
 fi
 # Checking the existence of the task in the cron
-if crontab -u root -l | grep -q "$job"; then
+if crontab -u root -l 2>/dev/null | grep -q "$job"; then
    :
-   else
-   (crontab -u root -l ; echo "$job") | crontab -u root -
+else
+   (crontab -u root -l 2>/dev/null; echo "$job") | crontab -u root -
 fi
 # Check if the ip address has changed delete old rule and add new 
 if [ "$IP" = "$(cat ~/lastip.txt)" ]; then
