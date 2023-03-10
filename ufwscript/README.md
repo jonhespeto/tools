@@ -1,4 +1,3 @@
-# README.md
 This script gets the ip address of the domain and adds it to the firewall, whitelisting access to hosts with dynamic ip addresses,
 it also adds a task to the cron running once a minute to update the ufw rules if the ip address has changed.
 
