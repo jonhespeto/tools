@@ -23,7 +23,7 @@ if [ ! -f ~/lastip.txt ]; then
    echo "$IP" > ~/lastip.txt
    sudo ufw allow from "$IP" to any
 #Added a notification to Telegram.
-   curl -s "https://api.telegram.org/botXXXXXXXXX:XXXXXXXXXXXXXXXXXXXXXXXX__XXXXXXXXX/sendMessage?chat_id=XXXXXXXX=&parse_mode=html&text=<b>IP address changed. New ip adress $IP. UFW rule added</b>"
+   curl -s "https://api.telegram.org/botXXXXXXXXX:XXXXXXXXXXXXXXXXXXXXXXXX__XXXXXXXXX/sendMessage?chat_id=XXXXXXXX=&parse_mode=html&text=<b>New ip adress $IP. UFW rule added</b>"
 fi
 # Checking the existence of the task in the cron
 if crontab -u root -l 2>/dev/null | grep -q "$job"; then
