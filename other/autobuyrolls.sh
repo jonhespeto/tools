@@ -46,5 +46,5 @@ $pass
 EOF
 
 tee "$directory"/rolls.log > /dev/null <<EOF
-Лог файл создан удачно.
+The log file was created successfully.
 EOF
