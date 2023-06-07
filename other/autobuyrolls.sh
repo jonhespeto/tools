@@ -6,6 +6,10 @@ set -euo pipefail
   exit 1
 }
 
+# View the last 50 lines of the log  < tail -n50 /root/rolls.log >
+
+# Clean up the contents of the log  < cat /dev/null > /root/rolls.log >
+
 if [ ! -z "${SUDO_USER:-}" ]; then
   directory=/home/"$SUDO_USER"
 else
